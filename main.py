@@ -2,6 +2,8 @@ import torch
 from src.train import model
 from src.datasets.accelerometry import window_size, num_features
 
+# Define main function
+
 
 def main():
     # Set up testing data

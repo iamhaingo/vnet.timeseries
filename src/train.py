@@ -9,8 +9,10 @@ from src.datasets.accelerometry import (
     val_dataset,
 )
 
+# Define model, loss function, and optimizer
 model = VnetTorch(in_channels=14, num_classes=7)
 
+# Define loss function and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
