@@ -9,8 +9,13 @@ from src.datasets.accelerometry import (
     val_dataset,
 )
 
+mps_device = torch.device("mps")
+
 # Define model, loss function, and optimizer
 model = VnetTorch(in_channels=14, num_classes=7)
+
+# Move to mps
+model.to(mps_device)
 
 # Define loss function and optimizer
 criterion = nn.CrossEntropyLoss()

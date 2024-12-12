@@ -15,6 +15,9 @@ print(f"X_train shape: {X_train.shape}")
 y_train = torch.randint(0, num_classes, (num_samples,))
 print(f"y_train shape: {y_train.shape}")
 
+X_train = X_train.to("mps")
+y_train = y_train.to("mps")
+
 # Convert to TensorDataset
 dataset = TensorDataset(X_train, y_train)
 
