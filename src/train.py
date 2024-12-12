@@ -15,7 +15,8 @@ mps_device = torch.device("mps")
 model = VnetTorch(in_channels=14, num_classes=7)
 
 # Move to mps
-model.to(mps_device)
+if torch.backends.mps.is_available():
+    model.to(mps_device)
 
 # Define loss function and optimizer
 criterion = nn.CrossEntropyLoss()
